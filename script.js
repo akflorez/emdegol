@@ -1,11 +1,11 @@
 const participants = [
-    { ranking: 1, name: "VALERIA G", points: 30, image: "valeria_giraldo_fifa.png" },
-    { ranking: 2, name: "LINA", points: 29, image: "lina marulanda fifa.png" },
-    { ranking: 3, name: "JENNIFER", points: 28, image: "jennifer_rincon_fifa.png" },
-    { ranking: 3, name: "LUZ DARY", points: 28, image: "luz_dary_fifa.png" },
-    { ranking: 3, name: "MARTIN MISSE", points: 28, image: "martin_fifa.png" },
-    { ranking: 3, name: "NORMIS", points: 28, image: "norma_perez_fifa.png" },
-    { ranking: 3, name: "PAUL", points: 28, image: "paul_jaramillo_fifa.png" }
+    { ranking: 1, name: "VALERIA G", points: 33, image: "valeria_giraldo_fifa.png" },
+    { ranking: 2, name: "LINA", points: 32, image: "lina marulanda fifa.png" },
+    { ranking: 3, name: "JENNIFER", points: 31, image: "jennifer_rincon_fifa.png" },
+    { ranking: 3, name: "LUZ DARY", points: 31, image: "luz_dary_fifa.png" },
+    { ranking: 3, name: "MARTIN MISSE", points: 31, image: "martin_fifa.png" },
+    { ranking: 3, name: "NORMIS", points: 31, image: "norma_perez_fifa.png" },
+    { ranking: 3, name: "PAUL", points: 31, image: "paul_jaramillo_fifa.png" }
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
