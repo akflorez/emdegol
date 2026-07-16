@@ -769,8 +769,8 @@ body.tv-mode {
 
 /* TV Overview Layout */
 .tv-podium {
-    transform: scale(1.1); /* Make it bigger for TV */
-    margin-top: 2rem;
+    transform: scale(0.95); /* Adjusted to fit the points */
+    margin-top: 0;
 }
 
 /* Scenario TV Layout */
