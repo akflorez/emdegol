@@ -851,17 +851,18 @@ body.tv-mode {
 }
 
 .tv-premios-grid .premio-card {
-    flex-direction: column;
+    flex-direction: column !important;
+    justify-content: center !important;
     text-align: center;
-    width: 450px;
+    width: 450px !important;
     padding: 4rem !important;
 }
 
 .tv-premios-grid .premio-info {
-    align-items: center;
+    align-items: center !important;
 }
 
 .tv-premios-grid .premio-monto {
-    margin-top: 1rem;
+    margin-top: 1rem !important;
     font-size: 3.5rem !important;
 }
