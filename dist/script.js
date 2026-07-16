@@ -7,17 +7,29 @@ const participants = [
 
 document.addEventListener('DOMContentLoaded', () => {
     renderPodium();
-    initScenariosSlider();
+    initTVPresentation();
     initConfetti();
-    initAutoScroll();
 });
 
 function renderPodium() {
     const container = document.getElementById('podium-container');
-    container.innerHTML = '';
+    if(container) container.innerHTML = '';
 
     participants.sort((a, b) => a.ranking - b.ranking).forEach(p => {
-        container.appendChild(createPodiumCard(p.ranking, p));
+        // Main podium
+        if(container) container.appendChild(createPodiumCard(p.ranking, p));
+        
+        // Inject into TV slides
+        let tvContainer;
+        if(p.ranking === 1) tvContainer = document.getElementById('tv-card-lina');
+        if(p.ranking === 2) tvContainer = document.getElementById('tv-card-jennifer');
+        if(p.ranking === 3) tvContainer = document.getElementById('tv-card-jhoan');
+        if(p.ranking === 4) tvContainer = document.getElementById('tv-card-paul');
+        
+        if (tvContainer) {
+            tvContainer.innerHTML = '';
+            tvContainer.appendChild(createPodiumCard(p.ranking, p));
+        }
     });
 }
 
@@ -104,125 +116,15 @@ function initConfetti() {
     });
 }
 
-function initScenariosSlider() {
-    const track = document.getElementById('slider-track');
-    const prevBtn = document.getElementById('prev-slide');
-    const nextBtn = document.getElementById('next-slide');
-    const dots = document.querySelectorAll('.s-dot');
+function initTVPresentation() {
+    const slides = document.querySelectorAll('.tv-slide');
+    if(slides.length === 0) return;
     
-    if (!track) return;
-
-    let currentIndex = 0;
-    const totalSlides = 4;
-    let autoSlideInterval;
-
-    function updateSlider() {
-        track.style.transform = `translateX(-${currentIndex * 25}%)`;
-        
-        dots.forEach((dot, index) => {
-            if (index === currentIndex) {
-                dot.classList.add('active');
-            } else {
-                dot.classList.remove('active');
-            }
-        });
-    }
-
-    function nextSlide() {
-        currentIndex = (currentIndex + 1) % totalSlides;
-        updateSlider();
-    }
-
-    function prevSlide() {
-        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-        updateSlider();
-    }
-
-    // Event listeners
-    nextBtn.addEventListener('click', () => {
-        nextSlide();
-        resetAutoSlide();
-    });
-
-    prevBtn.addEventListener('click', () => {
-        prevSlide();
-        resetAutoSlide();
-    });
-
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            currentIndex = index;
-            updateSlider();
-            resetAutoSlide();
-        });
-    });
-
-    // Auto rotate
-    function startAutoSlide() {
-        autoSlideInterval = setInterval(nextSlide, 8000);
-    }
-
-    function resetAutoSlide() {
-        clearInterval(autoSlideInterval);
-        startAutoSlide();
-    }
-
-    // Pause on hover
-    const sliderContainer = document.getElementById('scenarios-slider');
-    sliderContainer.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
-    sliderContainer.addEventListener('mouseleave', startAutoSlide);
-
-    startAutoSlide();
-}
-
-function initAutoScroll() {
-    let scrollPosition = 0;
-    let scrollingDown = true;
-    let isPaused = false;
+    let currentSlide = 0;
     
-    // Pause auto-scroll if user interacts with the page (mouse move, touch)
-    window.addEventListener('mousemove', pauseScrollTemporarily);
-    window.addEventListener('touchstart', pauseScrollTemporarily);
-    window.addEventListener('wheel', pauseScrollTemporarily);
-    
-    let pauseTimeout;
-    function pauseScrollTemporarily() {
-        isPaused = true;
-        clearTimeout(pauseTimeout);
-        pauseTimeout = setTimeout(() => {
-            isPaused = false;
-        }, 10000); // Resume after 10 seconds of inactivity
-    }
-
-    function scrollStep() {
-        if (!isPaused) {
-            const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-            
-            if (scrollingDown) {
-                scrollPosition += 1;
-                if (scrollPosition >= maxScroll) {
-                    scrollingDown = false;
-                    isPaused = true;
-                    setTimeout(() => isPaused = false, 3000); // Pause at bottom for 3s
-                }
-            } else {
-                // Instantly go to top when reaching bottom, or scroll back up? 
-                // Let's scroll back up smoothly but a bit faster
-                scrollPosition -= 3;
-                if (scrollPosition <= 0) {
-                    scrollPosition = 0;
-                    scrollingDown = true;
-                    isPaused = true;
-                    setTimeout(() => isPaused = false, 3000); // Pause at top for 3s
-                }
-            }
-            window.scrollTo(0, scrollPosition);
-        }
-        requestAnimationFrame(scrollStep);
-    }
-    
-    // Start scrolling after an initial delay
-    setTimeout(() => {
-        requestAnimationFrame(scrollStep);
-    }, 5000);
+    setInterval(() => {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add('active');
+    }, 15000); // Change slide every 15 seconds
 }
