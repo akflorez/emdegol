@@ -126,5 +126,5 @@ function initTVPresentation() {
         slides[currentSlide].classList.remove('active');
         currentSlide = (currentSlide + 1) % slides.length;
         slides[currentSlide].classList.add('active');
-    }, 15000); // Change slide every 15 seconds
+    }, 25000); // Change slide every 25 seconds
 }
