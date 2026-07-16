@@ -420,3 +420,191 @@ body {
     .avatar-container { width: 300px; height: 430px; }
     .rank-1 .avatar-container { width: 350px; height: 500px; }
 }
+
+/* --- NEW SECTIONS FOR THE FINAL --- */
+
+.badge-final {
+    background: linear-gradient(90deg, #CE1126, #ff4d4d);
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    padding: 0.5rem 1.5rem;
+    border-radius: 30px;
+    display: inline-block;
+    margin-top: 10px;
+    box-shadow: 0 0 15px rgba(206, 17, 38, 0.6);
+    letter-spacing: 2px;
+}
+
+.section-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 900;
+    text-align: center;
+    margin: 3rem 0 1rem;
+    color: white;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.section-subtitle {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.2rem;
+    color: var(--neon-yellow);
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.section-title-small {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 900;
+    text-align: center;
+    margin: 4rem 0 2rem;
+    color: white;
+    background: rgba(255,255,255,0.05);
+    padding: 1rem;
+    border-radius: 10px;
+    border-bottom: 2px solid rgba(255,255,255,0.1);
+}
+
+/* Rank 4 addition */
+.rank-4 .avatar-container::after { background: #ffffff; }
+.rank-4::before { background: radial-gradient(ellipse, #ffffff 0%, transparent 60%); }
+.rank-4 .points-display { border-color: #ffffff; color: #ffffff; }
+.rank-4 .rank-number { -webkit-text-stroke-color: rgba(255, 255, 255, 0.2); }
+
+/* Asegurados Grid */
+.asegurados-section, .premios-section {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.asegurados-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.asegurado-card {
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(10px);
+    border: 2px solid;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease;
+}
+
+.asegurado-card:hover {
+    transform: translateY(-5px);
+}
+
+.aseg-name {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: white;
+}
+
+.aseg-desc {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1rem;
+    color: #ccc;
+}
+
+.aseg-rank {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 900;
+    margin-top: 0.5rem;
+    text-shadow: 0 0 10px currentColor;
+}
+
+.border-yellow { border-color: var(--neon-yellow); }
+.text-yellow { color: var(--neon-yellow); }
+
+.border-blue { border-color: var(--neon-blue); }
+.text-blue { color: var(--neon-blue); }
+
+.border-red { border-color: var(--neon-red); }
+.text-red { color: var(--neon-red); }
+
+.border-white { border-color: white; }
+.text-white { color: white; }
+
+/* Premios Grid */
+.premios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.premio-card {
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(10px);
+    border: 2px solid;
+    border-radius: 12px;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.trophy {
+    font-size: 3rem;
+    filter: drop-shadow(0 0 10px rgba(255,255,255,0.3));
+}
+
+.premio-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.premio-lugar {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.2rem;
+    color: #ccc;
+}
+
+.premio-monto {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    font-weight: 900;
+    text-shadow: 0 0 15px currentColor;
+}
+
+.border-silver { border-color: #c0c0c0; }
+.text-silver { color: #c0c0c0; }
+
+.border-bronze { border-color: #cd7f32; }
+.text-bronze { color: #cd7f32; }
+
+/* Footer */
+.footer {
+    text-align: center;
+    margin-top: 5rem;
+    padding: 3rem 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-title {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.footer-logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    color: var(--neon-yellow);
+    letter-spacing: 5px;
+}
