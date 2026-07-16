@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderPodium();
     initScenariosSlider();
     initConfetti();
+    initAutoScroll();
 });
 
 function renderPodium() {
@@ -172,4 +173,56 @@ function initScenariosSlider() {
     sliderContainer.addEventListener('mouseleave', startAutoSlide);
 
     startAutoSlide();
+}
+
+function initAutoScroll() {
+    let scrollPosition = 0;
+    let scrollingDown = true;
+    let isPaused = false;
+    
+    // Pause auto-scroll if user interacts with the page (mouse move, touch)
+    window.addEventListener('mousemove', pauseScrollTemporarily);
+    window.addEventListener('touchstart', pauseScrollTemporarily);
+    window.addEventListener('wheel', pauseScrollTemporarily);
+    
+    let pauseTimeout;
+    function pauseScrollTemporarily() {
+        isPaused = true;
+        clearTimeout(pauseTimeout);
+        pauseTimeout = setTimeout(() => {
+            isPaused = false;
+        }, 10000); // Resume after 10 seconds of inactivity
+    }
+
+    function scrollStep() {
+        if (!isPaused) {
+            const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+            
+            if (scrollingDown) {
+                scrollPosition += 1;
+                if (scrollPosition >= maxScroll) {
+                    scrollingDown = false;
+                    isPaused = true;
+                    setTimeout(() => isPaused = false, 3000); // Pause at bottom for 3s
+                }
+            } else {
+                // Instantly go to top when reaching bottom, or scroll back up? 
+                // Let's scroll back up smoothly but a bit faster
+                scrollPosition -= 3;
+                if (scrollPosition <= 0) {
+                    scrollPosition = 0;
+                    scrollingDown = true;
+                    isPaused = true;
+                    setTimeout(() => isPaused = false, 3000); // Pause at top for 3s
+                }
+            }
+            window.scrollTo(0, scrollPosition);
+        }
+        requestAnimationFrame(scrollStep);
+    }
+    
+    // Start scrolling after an initial delay
+    setTimeout(() => {
+        requestAnimationFrame(scrollStep);
+    }, 5000);
 }
