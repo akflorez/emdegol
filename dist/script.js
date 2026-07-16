@@ -7,6 +7,7 @@ const participants = [
 
 document.addEventListener('DOMContentLoaded', () => {
     renderPodium();
+    initScenariosSlider();
     initConfetti();
 });
 
@@ -100,4 +101,75 @@ function initConfetti() {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
     });
+}
+
+function initScenariosSlider() {
+    const track = document.getElementById('slider-track');
+    const prevBtn = document.getElementById('prev-slide');
+    const nextBtn = document.getElementById('next-slide');
+    const dots = document.querySelectorAll('.s-dot');
+    
+    if (!track) return;
+
+    let currentIndex = 0;
+    const totalSlides = 4;
+    let autoSlideInterval;
+
+    function updateSlider() {
+        track.style.transform = `translateX(-${currentIndex * 25}%)`;
+        
+        dots.forEach((dot, index) => {
+            if (index === currentIndex) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
+        });
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        updateSlider();
+    }
+
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        updateSlider();
+    }
+
+    // Event listeners
+    nextBtn.addEventListener('click', () => {
+        nextSlide();
+        resetAutoSlide();
+    });
+
+    prevBtn.addEventListener('click', () => {
+        prevSlide();
+        resetAutoSlide();
+    });
+
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            currentIndex = index;
+            updateSlider();
+            resetAutoSlide();
+        });
+    });
+
+    // Auto rotate
+    function startAutoSlide() {
+        autoSlideInterval = setInterval(nextSlide, 8000);
+    }
+
+    function resetAutoSlide() {
+        clearInterval(autoSlideInterval);
+        startAutoSlide();
+    }
+
+    // Pause on hover
+    const sliderContainer = document.getElementById('scenarios-slider');
+    sliderContainer.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
+    sliderContainer.addEventListener('mouseleave', startAutoSlide);
+
+    startAutoSlide();
 }
