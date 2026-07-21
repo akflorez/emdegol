@@ -731,12 +731,19 @@ body {
     .scenario-header h3 { font-size: 1.5rem; }
     .slider-btn { width: 35px; height: 35px; font-size: 1rem; }
 }
-/* Publication Mode Styles */
-body.publication-mode {
-    overflow-y: auto;
-    overflow-x: hidden;
-    min-height: 100vh;
-    display: block;
+/* TV Mode Styles */
+body.tv-mode {
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.tv-presentation {
+    flex-grow: 1;
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 200px);
 }
 
 .publication-container {
@@ -858,6 +865,28 @@ body.publication-mode {
     font-family: 'Orbitron', sans-serif;
     font-weight: 900;
     margin-top: 0.2rem;
+}
+
+.winner-details {
+    margin-top: 1.5rem;
+}
+
+.prize-tag {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: 1.5rem;
+    padding: 10px 20px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 12px;
+    display: inline-block;
+}
+
+.congrats-text {
+    font-size: 1.6rem;
+    line-height: 1.5;
+    color: #ddd;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .tv-slide {

@@ -7,7 +7,7 @@ const participants = [
 document.addEventListener('DOMContentLoaded', () => {
     renderPodium();
     initConfetti();
-    initPremiosSlider();
+    initTVPresentation();
 });
 
 function renderPodium() {
@@ -16,6 +16,16 @@ function renderPodium() {
 
     participants.sort((a, b) => a.ranking - b.ranking).forEach(p => {
         if(container) container.appendChild(createPodiumCard(p.ranking, p));
+
+        let tvContainer;
+        if(p.ranking === 1) tvContainer = document.getElementById('tv-card-lina');
+        if(p.ranking === 2) tvContainer = document.getElementById('tv-card-jennifer');
+        if(p.ranking === 3) tvContainer = document.getElementById('tv-card-jhoan');
+
+        if (tvContainer) {
+            tvContainer.innerHTML = '';
+            tvContainer.appendChild(createPodiumCard(p.ranking, p));
+        }
     });
 }
 
@@ -102,64 +112,17 @@ function initConfetti() {
     });
 }
 
-function initPremiosSlider() {
-    const track = document.getElementById('premios-track');
-    const prevBtn = document.getElementById('premios-prev');
-    const nextBtn = document.getElementById('premios-next');
-    const dotsContainer = document.getElementById('premios-dots');
-    if (!track) return;
+function initTVPresentation() {
+    const slides = document.querySelectorAll('.tv-slide');
+    if(slides.length === 0) return;
     
-    const dots = dotsContainer ? dotsContainer.querySelectorAll('.s-dot') : [];
-    let currentIndex = 0;
-    const totalSlides = 3;
-    let autoTimer = null;
-
-    function goToSlide(index) {
-        currentIndex = (index + totalSlides) % totalSlides;
-        track.style.transform = `translateX(-${(currentIndex * 100) / totalSlides}%)`;
-        
-        dots.forEach((dot, i) => {
-            if (i === currentIndex) {
-                dot.classList.add('active');
-            } else {
-                dot.classList.remove('active');
-            }
-        });
-    }
-
-    if (nextBtn) {
-        nextBtn.addEventListener('click', () => {
-            goToSlide(currentIndex + 1);
-            resetTimer();
-        });
-    }
-
-    if (prevBtn) {
-        prevBtn.addEventListener('click', () => {
-            goToSlide(currentIndex - 1);
-            resetTimer();
-        });
-    }
-
-    dots.forEach((dot, i) => {
-        dot.addEventListener('click', () => {
-            goToSlide(i);
-            resetTimer();
-        });
-    });
-
-    function startTimer() {
-        autoTimer = setInterval(() => {
-            goToSlide(currentIndex + 1);
-        }, 4000);
-    }
-
-    function resetTimer() {
-        if (autoTimer) clearInterval(autoTimer);
-        startTimer();
-    }
-
-    startTimer();
+    let currentSlide = 0;
+    
+    setInterval(() => {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add('active');
+    }, 15000); // Change slide every 15 seconds
 }
 
 
