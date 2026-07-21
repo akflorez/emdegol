@@ -1,13 +1,11 @@
 const participants = [
-    { ranking: 1, name: "LINA", points: 84, image: "lina marulanda fifa.png" },
-    { ranking: 2, name: "JENNIFER", points: 83, image: "jennifer_rincon_fifa.png" },
-    { ranking: 3, name: "JHOAN", points: 79, image: "jhoan_fifa.png" },
-    { ranking: 4, name: "PAUL", points: 77, image: "paul_jaramillo_fifa.png" }
+    { ranking: 1, name: "LINA", points: "CAMPEONA", image: "lina marulanda fifa.png", title: "🏆 CAMPEONA" },
+    { ranking: 2, name: "JENNIFER", points: "SUBCAMPEONA", image: "jennifer_rincon_fifa.png", title: "🥈 SUBCAMPEONA" },
+    { ranking: 3, name: "JHOAN", points: "3ER LUGAR", image: "jhoan_fifa.png", title: "🥉 3ER LUGAR" }
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
     renderPodium();
-    initTVPresentation();
     initConfetti();
 });
 
@@ -16,20 +14,7 @@ function renderPodium() {
     if(container) container.innerHTML = '';
 
     participants.sort((a, b) => a.ranking - b.ranking).forEach(p => {
-        // Main podium
         if(container) container.appendChild(createPodiumCard(p.ranking, p));
-        
-        // Inject into TV slides
-        let tvContainer;
-        if(p.ranking === 1) tvContainer = document.getElementById('tv-card-lina');
-        if(p.ranking === 2) tvContainer = document.getElementById('tv-card-jennifer');
-        if(p.ranking === 3) tvContainer = document.getElementById('tv-card-jhoan');
-        if(p.ranking === 4) tvContainer = document.getElementById('tv-card-paul');
-        
-        if (tvContainer) {
-            tvContainer.innerHTML = '';
-            tvContainer.appendChild(createPodiumCard(p.ranking, p));
-        }
     });
 }
 
@@ -43,11 +28,11 @@ function createPodiumCard(rank, data) {
     else if(rank === 3) icon = '🥉';
     else if(rank === 4) icon = '⭐';
 
-    const leaderBadge = rank === 1 ? '<div class="leader-badge">LÍDER ACTUAL</div>' : '';
+    const badgeHtml = data.title ? `<div class="leader-badge">${data.title}</div>` : '';
 
     el.innerHTML = `
         <div class="award-icon">${icon}</div>
-        ${leaderBadge}
+        ${badgeHtml}
         <div class="user-info">
             <div class="avatar-container">
                 <img src="${data.image}" alt="${data.name}" class="avatar" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\\'http://www.w3.org/2000/svg\\' width=\\'100\\' height=\\'100\\'><rect width=\\'100\\' height=\\'100\\' fill=\\'%23333\\'/></svg>'">
@@ -116,15 +101,4 @@ function initConfetti() {
     });
 }
 
-function initTVPresentation() {
-    const slides = document.querySelectorAll('.tv-slide');
-    if(slides.length === 0) return;
-    
-    let currentSlide = 0;
-    
-    setInterval(() => {
-        slides[currentSlide].classList.remove('active');
-        currentSlide = (currentSlide + 1) % slides.length;
-        slides[currentSlide].classList.add('active');
-    }, 25000); // Change slide every 25 seconds
-}
+
