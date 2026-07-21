@@ -776,6 +776,81 @@ body.publication-mode {
     padding: 3rem;
 }
 
+/* Premios Slider Styles */
+.premios-slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 750px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.premios-slider-wrapper {
+    overflow: hidden;
+    width: 100%;
+    border-radius: 20px;
+    padding: 15px 0;
+}
+
+.premios-slider-track {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    width: 300%;
+}
+
+.premio-slide {
+    width: 33.3333%;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+.premio-slide .premio-card {
+    width: 100%;
+    max-width: 500px;
+    flex-direction: column !important;
+    text-align: center;
+    padding: 3rem 2rem !important;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.8);
+    background: rgba(15, 15, 25, 0.9);
+    backdrop-filter: blur(12px);
+    border-radius: 24px;
+}
+
+.premio-slide .trophy {
+    font-size: 5rem;
+    margin-bottom: 0.5rem;
+}
+
+.premio-slide .premio-lugar {
+    font-size: 1.4rem;
+    color: #aaa;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+}
+
+.premio-slide .premio-nombre {
+    font-size: 2.2rem;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    margin: 0.8rem 0;
+    letter-spacing: 1px;
+}
+
+.premio-slide .premio-monto {
+    font-size: 3.2rem !important;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    margin-top: 0.5rem;
+}
+
 .tv-slide {
     position: absolute;
     top: 0;

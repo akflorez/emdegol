@@ -7,6 +7,7 @@ const participants = [
 document.addEventListener('DOMContentLoaded', () => {
     renderPodium();
     initConfetti();
+    initPremiosSlider();
 });
 
 function renderPodium() {
@@ -99,6 +100,66 @@ function initConfetti() {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
     });
+}
+
+function initPremiosSlider() {
+    const track = document.getElementById('premios-track');
+    const prevBtn = document.getElementById('premios-prev');
+    const nextBtn = document.getElementById('premios-next');
+    const dotsContainer = document.getElementById('premios-dots');
+    if (!track) return;
+    
+    const dots = dotsContainer ? dotsContainer.querySelectorAll('.s-dot') : [];
+    let currentIndex = 0;
+    const totalSlides = 3;
+    let autoTimer = null;
+
+    function goToSlide(index) {
+        currentIndex = (index + totalSlides) % totalSlides;
+        track.style.transform = `translateX(-${(currentIndex * 100) / totalSlides}%)`;
+        
+        dots.forEach((dot, i) => {
+            if (i === currentIndex) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
+        });
+    }
+
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            goToSlide(currentIndex + 1);
+            resetTimer();
+        });
+    }
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            goToSlide(currentIndex - 1);
+            resetTimer();
+        });
+    }
+
+    dots.forEach((dot, i) => {
+        dot.addEventListener('click', () => {
+            goToSlide(i);
+            resetTimer();
+        });
+    });
+
+    function startTimer() {
+        autoTimer = setInterval(() => {
+            goToSlide(currentIndex + 1);
+        }, 4000);
+    }
+
+    function resetTimer() {
+        if (autoTimer) clearInterval(autoTimer);
+        startTimer();
+    }
+
+    startTimer();
 }
 
 

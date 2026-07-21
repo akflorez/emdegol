@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EMDEGOL - Ganadores Oficiales</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Oswald:wght@500;700;900&family=Teko:wght@500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=6">
+    <link rel="stylesheet" href="styles.css?v=7">
 </head>
 <body class="publication-mode">
     <div class="background-effects">
@@ -36,34 +36,59 @@
             </main>
         </div>
 
-        <!-- Premios -->
+        <!-- Premios Slider -->
         <div class="publication-section">
             <section class="premios-section publication-premios">
                 <div class="section-title main-candidatos" style="font-size: 3.5rem; margin-top: 3rem; margin-bottom: 2rem;">
-                    <span class="money-icon">💰</span> GRAN PREMIACIÓN <span class="money-icon">💰</span>
+                    <span class="money-icon">💰</span> PREMIOS DE LA FINAL <span class="money-icon">💰</span>
                 </div>
-                <div class="premios-grid publication-premios-grid" style="gap: 2rem;">
-                    <div class="premio-card border-yellow" style="padding: 2rem; transform: scale(1.05);">
-                        <div class="trophy" style="font-size: 4rem;">🏆 1</div>
-                        <div class="premio-info">
-                            <span class="premio-lugar" style="font-size: 1.5rem;">Campeona:</span>
-                            <span class="premio-monto text-yellow" style="font-size: 2.5rem; line-height: 1.2;">$700.000</span>
+                
+                <div class="premios-slider-container">
+                    <button class="slider-btn prev-btn" id="premios-prev">❮</button>
+                    <div class="premios-slider-wrapper">
+                        <div class="premios-slider-track" id="premios-track">
+                            <!-- Slide 1: 1er Lugar -->
+                            <div class="premio-slide">
+                                <div class="premio-card border-yellow">
+                                    <div class="trophy">🏆</div>
+                                    <div class="premio-info">
+                                        <span class="premio-lugar">1er Lugar - Campeona</span>
+                                        <span class="premio-nombre text-yellow">LINA MARULANDA</span>
+                                        <span class="premio-monto text-yellow">$700.000</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Slide 2: 2do Lugar -->
+                            <div class="premio-slide">
+                                <div class="premio-card border-silver">
+                                    <div class="trophy">🥈</div>
+                                    <div class="premio-info">
+                                        <span class="premio-lugar">2do Lugar - Subcampeona</span>
+                                        <span class="premio-nombre text-silver">JENNIFER RINCON</span>
+                                        <span class="premio-monto text-silver">$300.000</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Slide 3: 3er Lugar -->
+                            <div class="premio-slide">
+                                <div class="premio-card border-bronze">
+                                    <div class="trophy">🥉</div>
+                                    <div class="premio-info">
+                                        <span class="premio-lugar">3er Lugar</span>
+                                        <span class="premio-nombre text-bronze">JHOAN</span>
+                                        <span class="premio-monto text-bronze">Premio sorpresa</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="premio-card border-silver" style="padding: 2rem; transform: scale(1.05);">
-                        <div class="trophy" style="font-size: 4rem;">🥈 2</div>
-                        <div class="premio-info">
-                            <span class="premio-lugar" style="font-size: 1.5rem;">Subcampeona:</span>
-                            <span class="premio-monto text-silver" style="font-size: 2.5rem; line-height: 1.2;">$300.000</span>
-                        </div>
-                    </div>
-                    <div class="premio-card border-bronze" style="padding: 2rem; transform: scale(1.05);">
-                        <div class="trophy" style="font-size: 4rem;">🥉 3</div>
-                        <div class="premio-info">
-                            <span class="premio-lugar" style="font-size: 1.5rem;">Tercer Lugar:</span>
-                            <span class="premio-monto text-bronze" style="font-size: 2.5rem; line-height: 1.2;">Premio sorpresa</span>
-                        </div>
-                    </div>
+                    <button class="slider-btn next-btn" id="premios-next">❯</button>
+                </div>
+
+                <div class="slider-dots" id="premios-dots">
+                    <span class="s-dot active" data-index="0"></span>
+                    <span class="s-dot" data-index="1"></span>
+                    <span class="s-dot" data-index="2"></span>
                 </div>
             </section>
         </div>
@@ -75,6 +100,6 @@
         <p class="footer-logo">E M D E C O B  S . A . S .</p>
     </footer>
 
-    <script src="script.js?v=5"></script>
+    <script src="script.js?v=6"></script>
 </body>
 </html>
