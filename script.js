@@ -150,7 +150,7 @@ function initTVPresentation() {
     
     // Initial check
     if (header) {
-        if (currentSlide === 4) {
+        if (currentSlide === 5) {
             header.style.display = 'none';
         } else {
             header.style.display = 'flex';
@@ -162,9 +162,9 @@ function initTVPresentation() {
         currentSlide = (currentSlide + 1) % slides.length;
         slides[currentSlide].classList.add('active');
         
-        // Hide header on thanks slide (slide 4)
+        // Hide header on thanks slide (slide 5)
         if (header) {
-            if (currentSlide === 4) {
+            if (currentSlide === 5) {
                 header.style.display = 'none';
             } else {
                 header.style.display = 'flex';

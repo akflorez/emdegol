@@ -1439,3 +1439,55 @@ body.tv-mode {
     text-shadow: 0 0 10px currentColor;
     color: var(--neon-yellow);
 }
+
+/* Double Checks Marcador Slide Styles */
+.marcador-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    height: 80%;
+}
+
+.double-checks-layout {
+    display: flex;
+    gap: 4rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.mini-check {
+    flex: 1;
+    max-width: 650px !important;
+    padding: 2.2rem !important;
+    gap: 1.5rem !important;
+}
+
+.mini-check .check-body {
+    gap: 1.2rem !important;
+}
+
+.mini-check .check-header {
+    font-size: 1.1rem !important;
+    padding-bottom: 0.5rem !important;
+}
+
+.mini-check .check-label {
+    font-size: 1rem !important;
+}
+
+.mini-check .check-value {
+    font-size: 1.2rem !important;
+}
+
+.mini-check .word-amount {
+    font-size: 1.1rem !important;
+}
+
+.mini-check .check-amount-value {
+    font-size: 2.2rem !important;
+}

@@ -143,15 +143,34 @@ function initConfetti() {
 
 function initTVPresentation() {
     const slides = document.querySelectorAll('.tv-slide');
+    const header = document.querySelector('.tv-header');
     if(slides.length === 0) return;
     
     let currentSlide = 0;
+    
+    // Initial check
+    if (header) {
+        if (currentSlide === 5) {
+            header.style.display = 'none';
+        } else {
+            header.style.display = 'flex';
+        }
+    }
     
     setInterval(() => {
         slides[currentSlide].classList.remove('active');
         currentSlide = (currentSlide + 1) % slides.length;
         slides[currentSlide].classList.add('active');
-    }, 15000); // Change slide every 15 seconds
+        
+        // Hide header on thanks slide (slide 5)
+        if (header) {
+            if (currentSlide === 5) {
+                header.style.display = 'none';
+            } else {
+                header.style.display = 'flex';
+            }
+        }
+    }, 25000); // Change slide every 25 seconds
 }
 
 
