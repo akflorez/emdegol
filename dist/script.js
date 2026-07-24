@@ -1,7 +1,7 @@
 const participants = [
-    { ranking: 1, name: "LINA", points: "84 PTS", image: "lina marulanda fifa.png", title: "🏆 CAMPEONA" },
-    { ranking: 2, name: "JENNIFER", points: "83 PTS", image: "jennifer_rincon_fifa.png", title: "🥈 SUBCAMPEONA" },
-    { ranking: 3, name: "JHOAN", points: "79 PTS", image: "jhoan_fifa.png", title: "🥉 3ER LUGAR" }
+    { ranking: 1, name: "LINA", points: 84, image: "lina marulanda fifa.png", title: "🏆 CAMPEONA" },
+    { ranking: 2, name: "JENNIFER", points: 83, image: "jennifer_rincon_fifa.png", title: "🥈 SUBCAMPEONA" },
+    { ranking: 3, name: "JHOAN", points: 79, image: "jhoan_fifa.png", title: "🥉 3ER LUGAR" }
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
