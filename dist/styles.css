@@ -936,7 +936,7 @@ body.tv-mode {
 }
 
 .tv-card-side {
-    flex: 1.8; /* Increased to give hologram more space */
+    flex: 1.2; /* Adjusted to balance with check */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -947,7 +947,7 @@ body.tv-mode {
 }
 
 .tv-text-side {
-    flex: 1.6; /* Reduced from 2 to give hologram priority */
+    flex: 1.8; /* Adjusted for better balance */
     background: rgba(0,0,0,0.6);
     border-radius: 20px;
     padding: 3rem;
@@ -1336,16 +1336,16 @@ body.tv-mode {
     align-items: center;
     justify-content: center;
     position: relative;
-    width: 500px;
-    height: 700px;
-    transform: translateY(-40px) scale(1.3); /* Multiplied overall size scale */
+    width: 380px; /* Balanced width */
+    height: 530px; /* Balanced height */
+    transform: translateY(-15px); /* Moderate offset */
 }
 
 .hologram-glow {
     position: absolute;
     bottom: 30px;
-    width: 380px; /* Enormous glow */
-    height: 600px; /* Enormous glow */
+    width: 260px; /* Balanced glow width */
+    height: 460px; /* Balanced glow height */
     filter: blur(15px);
     z-index: 1;
     animation: pulseGlow 1.5s ease-in-out infinite alternate;
@@ -1375,7 +1375,7 @@ body.tv-mode {
 .character-360 {
     position: relative;
     width: 100%;
-    height: 570px; /* Giant character */
+    height: 440px; /* Balanced character height */
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -1385,7 +1385,7 @@ body.tv-mode {
 
 .character-360 img {
     position: absolute;
-    height: 570px; /* Giant character */
+    height: 440px; /* Balanced character height */
     width: auto;
     opacity: 0;
     pointer-events: none;
@@ -1419,8 +1419,8 @@ body.tv-mode {
 
 .hologram-pedestal {
     position: relative;
-    width: 400px; /* Wider pedestal */
-    height: 45px; /* Taller pedestal */
+    width: 280px; /* Balanced pedestal width */
+    height: 35px; /* Balanced pedestal height */
     border: 2px solid var(--neon-yellow);
     background: rgba(15, 15, 25, 0.95);
     border-radius: 50% / 15px; /* Creates ellipse */
