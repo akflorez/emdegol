@@ -912,13 +912,13 @@ body.tv-mode {
 
 /* TV Overview Layout */
 .tv-podium {
-    transform: scale(0.85); /* Slightly scaled down to prevent title overlap */
-    margin-top: 6.5rem !important; /* Pushed down to clear the title */
+    transform: scale(0.8); /* Scaled down slightly to guarantee title clearance */
+    margin-top: 8.5rem !important; /* Pushed further down */
 }
 
 /* TV Slide Titles */
 .tv-slide .section-title {
-    margin-top: -4.2rem !important; /* Moved further up to clear overlap */
+    margin-top: -3.5rem !important; /* Positioned nicely near the header */
 }
 
 .tv-slide .section-subtitle {
@@ -1030,14 +1030,14 @@ body.tv-mode {
 
 /* Jennifer 2nd place (Left) */
 .real-podium-layout .podium-item:nth-child(1) {
-    transform: scale(0.98);
-    margin-bottom: 20px;
+    transform: scale(0.95);
+    margin-bottom: 12px;
 }
 
 /* Lina 1st place (Center) */
 .real-podium-layout .podium-item:nth-child(2) {
-    transform: scale(1.1);
-    margin-bottom: 70px;
+    transform: scale(1.05);
+    margin-bottom: 30px; /* Reduced from 70px to lower the height and prevent title overlap */
     z-index: 10;
 }
 
