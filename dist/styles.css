@@ -1336,16 +1336,16 @@ body.tv-mode {
     align-items: center;
     justify-content: center;
     position: relative;
-    width: 380px; /* Balanced width */
-    height: 530px; /* Balanced height */
-    transform: translateY(-15px); /* Moderate offset */
+    width: 340px; /* Reduced from 380px */
+    height: 480px; /* Reduced from 530px */
+    transform: translateY(-10px); /* Smaller offset */
 }
 
 .hologram-glow {
     position: absolute;
     bottom: 30px;
-    width: 260px; /* Balanced glow width */
-    height: 460px; /* Balanced glow height */
+    width: 240px; /* Reduced from 260px */
+    height: 410px; /* Reduced from 460px */
     filter: blur(15px);
     z-index: 1;
     animation: pulseGlow 1.5s ease-in-out infinite alternate;
@@ -1375,7 +1375,7 @@ body.tv-mode {
 .character-360 {
     position: relative;
     width: 100%;
-    height: 440px; /* Balanced character height */
+    height: 370px; /* Reduced height (was 440px) */
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -1385,7 +1385,7 @@ body.tv-mode {
 
 .character-360 img {
     position: absolute;
-    height: 440px; /* Balanced character height */
+    height: 370px; /* Reduced height (was 440px) */
     width: auto;
     opacity: 0;
     pointer-events: none;
@@ -1419,8 +1419,8 @@ body.tv-mode {
 
 .hologram-pedestal {
     position: relative;
-    width: 280px; /* Balanced pedestal width */
-    height: 35px; /* Balanced pedestal height */
+    width: 260px; /* Reduced from 280px */
+    height: 32px; /* Reduced from 35px */
     border: 2px solid var(--neon-yellow);
     background: rgba(15, 15, 25, 0.95);
     border-radius: 50% / 15px; /* Creates ellipse */
