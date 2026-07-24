@@ -1009,3 +1009,306 @@ body.tv-mode {
     margin-top: 1rem !important;
     font-size: 3.5rem !important;
 }
+
+/* Real 3D Podium staircase layout */
+.real-podium-layout {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: flex-end !important;
+    height: 60%;
+    gap: 3rem !important;
+}
+
+/* Jennifer 2nd place (Left) */
+.real-podium-layout .podium-item:nth-child(1) {
+    transform: scale(0.98);
+    margin-bottom: 20px;
+}
+
+/* Lina 1st place (Center) */
+.real-podium-layout .podium-item:nth-child(2) {
+    transform: scale(1.1);
+    margin-bottom: 70px;
+    z-index: 10;
+}
+
+/* Jhoan 3rd place (Right) */
+.real-podium-layout .podium-item:nth-child(3) {
+    transform: scale(0.9);
+    margin-bottom: 0px;
+}
+
+/* Neon Check Styles (Who Wants to Be a Millionaire style) */
+.check-side {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+
+.neon-check {
+    background: rgba(10, 10, 20, 0.9);
+    border: 3px solid;
+    border-radius: 20px;
+    padding: 3rem;
+    width: 100%;
+    max-width: 900px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.8);
+    backdrop-filter: blur(12px);
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.check-header {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 1.4rem;
+    letter-spacing: 3px;
+    border-bottom: 2px solid rgba(255,255,255,0.1);
+    padding-bottom: 1rem;
+}
+
+.check-body {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.check-row {
+    display: flex;
+    align-items: flex-end;
+}
+
+.check-label {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #888;
+    margin-right: 15px;
+    white-space: nowrap;
+    letter-spacing: 1px;
+}
+
+.check-value {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    font-size: 2.2rem;
+    border-bottom: 2px dashed rgba(255,255,255,0.2);
+    flex-grow: 1;
+    padding-left: 15px;
+    letter-spacing: 2px;
+}
+
+.name-glow {
+    text-shadow: 0 0 15px currentColor;
+}
+
+.word-amount {
+    font-size: 1.6rem;
+    font-family: 'Montserrat', sans-serif;
+    color: #eee;
+    letter-spacing: 1px;
+}
+
+.check-bottom-row {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.check-memo-box {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.check-memo-box .check-value {
+    font-size: 1.4rem;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #aaa;
+}
+
+.check-amount-box {
+    display: flex;
+    align-items: center;
+    border: 3px solid;
+    padding: 10px 30px;
+    border-radius: 15px;
+    background: rgba(0,0,0,0.5);
+    box-shadow: 0 0 20px rgba(255,255,255,0.05);
+}
+
+.check-amount-symbol {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-right: 10px;
+}
+
+.check-amount-value {
+    font-size: 3.5rem;
+    font-weight: 900;
+    text-shadow: 0 0 20px currentColor;
+}
+
+.check-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 1rem;
+}
+
+.check-date {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.2rem;
+    color: #888;
+}
+
+.check-signature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    color: #aaa;
+}
+
+.sig-line {
+    width: 200px;
+    border-bottom: 2px solid rgba(255,255,255,0.4);
+    margin-bottom: 0.5rem;
+}
+
+/* Slide 5 Thanks Section */
+.thanks-container {
+    text-align: center;
+    max-width: 1000px;
+    padding: 3rem;
+    background: rgba(10, 10, 20, 0.6);
+    border-radius: 30px;
+    border: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+.thanks-stars-balls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.thanks-stars-balls .ball-icon {
+    font-size: 2.5rem;
+    filter: drop-shadow(0 0 10px rgba(255,255,255,0.5));
+}
+
+.thanks-stars-balls .star-icon {
+    font-size: 2rem;
+    color: #fbbf24; /* yellow-400 */
+    text-shadow: 0 0 10px rgba(251,191,36,0.6);
+}
+
+.thanks-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 7.5rem;
+    font-weight: 900;
+    color: #fbbf24; /* Golden yellow */
+    letter-spacing: 5px;
+    margin: 0;
+    line-height: 1;
+    text-shadow: 0 0 30px rgba(251,191,36,0.5), 0 5px 15px rgba(0,0,0,0.8);
+}
+
+.thanks-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 2px;
+    line-height: 1.5;
+    margin-top: 1.5rem;
+    margin-bottom: 3rem;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.highlight-union {
+    color: #fbbf24;
+}
+
+.sponsor-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    margin: 0 auto 2rem auto;
+}
+
+.sponsor-divider .divider-line {
+    flex-grow: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+}
+
+.sponsor-divider .sponsor-label {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.1rem;
+    color: #fbbf24;
+    letter-spacing: 4px;
+    padding: 0 20px;
+    white-space: nowrap;
+}
+
+.sponsor-logo-box {
+    width: 130px;
+    height: 130px;
+    margin: 0 auto 1.5rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(16, 185, 129, 0.05);
+    border: 2px solid rgba(16, 185, 129, 0.2);
+    border-radius: 20px;
+    padding: 15px;
+    box-shadow: 0 0 30px rgba(16, 185, 129, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.sponsor-logo-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(16, 185, 129, 0.2);
+}
+
+.svg-logo {
+    width: 100%;
+    height: 100%;
+}
+
+.hex-bg {
+    fill: rgba(16, 185, 129, 0.1);
+}
+
+.hex-glow {
+    filter: drop-shadow(0 0 8px rgba(34, 197, 94, 0.8));
+}
+
+.logo-inner {
+    filter: drop-shadow(0 0 5px rgba(34, 197, 94, 0.6));
+}
+
+.sponsor-name {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: #fff;
+    letter-spacing: 5px;
+    margin: 0;
+    text-shadow: 0 0 15px rgba(255,255,255,0.3);
+}

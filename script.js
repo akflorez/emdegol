@@ -14,9 +14,19 @@ function renderPodium() {
     const container = document.getElementById('podium-container');
     if(container) container.innerHTML = '';
 
-    participants.sort((a, b) => a.ranking - b.ranking).forEach(p => {
-        if(container) container.appendChild(createPodiumCard(p.ranking, p));
+    // Render order: Rank 2 (Jennifer), Rank 1 (Lina), Rank 3 (Jhoan)
+    const renderOrder = [
+        participants.find(p => p.ranking === 2),
+        participants.find(p => p.ranking === 1),
+        participants.find(p => p.ranking === 3)
+    ];
 
+    renderOrder.forEach(p => {
+        if(p && container) container.appendChild(createPodiumCard(p.ranking, p));
+    });
+
+    // Inject into individual TV containers
+    participants.forEach(p => {
         let tvContainer;
         if(p.ranking === 1) tvContainer = document.getElementById('tv-card-lina');
         if(p.ranking === 2) tvContainer = document.getElementById('tv-card-jennifer');
