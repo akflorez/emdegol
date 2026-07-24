@@ -913,12 +913,12 @@ body.tv-mode {
 /* TV Overview Layout */
 .tv-podium {
     transform: scale(0.85); /* Slightly scaled down to prevent title overlap */
-    margin-top: 4.5rem !important; /* Adjusted slightly to fit with title moved up */
+    margin-top: 6.5rem !important; /* Pushed down to clear the title */
 }
 
 /* TV Slide Titles */
 .tv-slide .section-title {
-    margin-top: 0.5rem !important;
+    margin-top: -2.5rem !important; /* Moved significantly up into the header gap */
 }
 
 .tv-slide .section-subtitle {
