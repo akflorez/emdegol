@@ -918,7 +918,7 @@ body.tv-mode {
 
 /* TV Slide Titles */
 .tv-slide .section-title {
-    margin-top: -2.5rem !important; /* Moved significantly up into the header gap */
+    margin-top: -4.2rem !important; /* Moved further up to clear overlap */
 }
 
 .tv-slide .section-subtitle {
