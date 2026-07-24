@@ -936,7 +936,7 @@ body.tv-mode {
 }
 
 .tv-card-side {
-    flex: 1.5; /* Increased to fit giant holograms */
+    flex: 1.8; /* Increased to give hologram more space */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -947,7 +947,7 @@ body.tv-mode {
 }
 
 .tv-text-side {
-    flex: 2;
+    flex: 1.6; /* Reduced from 2 to give hologram priority */
     background: rgba(0,0,0,0.6);
     border-radius: 20px;
     padding: 3rem;
@@ -1336,9 +1336,9 @@ body.tv-mode {
     align-items: center;
     justify-content: center;
     position: relative;
-    width: 500px; /* Enormous width */
-    height: 700px; /* Enormous height */
-    transform: translateY(-40px);
+    width: 500px;
+    height: 700px;
+    transform: translateY(-40px) scale(1.3); /* Multiplied overall size scale */
 }
 
 .hologram-glow {
