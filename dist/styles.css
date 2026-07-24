@@ -913,7 +913,16 @@ body.tv-mode {
 /* TV Overview Layout */
 .tv-podium {
     transform: scale(0.85); /* Slightly scaled down to prevent title overlap */
-    margin-top: 6rem !important; /* Pushed down to clear the title */
+    margin-top: 4.5rem !important; /* Adjusted slightly to fit with title moved up */
+}
+
+/* TV Slide Titles */
+.tv-slide .section-title {
+    margin-top: 0.5rem !important;
+}
+
+.tv-slide .section-subtitle {
+    margin-bottom: 0.5rem !important;
 }
 
 /* Scenario TV Layout */
@@ -927,14 +936,14 @@ body.tv-mode {
 }
 
 .tv-card-side {
-    flex: 1.3; /* Increased from 1 to make it larger */
+    flex: 1.5; /* Increased to fit giant holograms */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .tv-card-side .podium-item {
-    transform: scale(1.6); /* Slightly increased */
+    transform: scale(1.6);
 }
 
 .tv-text-side {
@@ -1327,16 +1336,16 @@ body.tv-mode {
     align-items: center;
     justify-content: center;
     position: relative;
-    width: 440px; /* Increased from 320px */
-    height: 600px; /* Increased from 480px */
-    transform: translateY(-20px);
+    width: 500px; /* Enormous width */
+    height: 700px; /* Enormous height */
+    transform: translateY(-40px);
 }
 
 .hologram-glow {
     position: absolute;
     bottom: 30px;
-    width: 320px; /* Increased from 220px */
-    height: 520px; /* Increased from 420px */
+    width: 380px; /* Enormous glow */
+    height: 600px; /* Enormous glow */
     filter: blur(15px);
     z-index: 1;
     animation: pulseGlow 1.5s ease-in-out infinite alternate;
@@ -1366,7 +1375,7 @@ body.tv-mode {
 .character-360 {
     position: relative;
     width: 100%;
-    height: 480px; /* Increased from 380px */
+    height: 570px; /* Giant character */
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -1376,7 +1385,7 @@ body.tv-mode {
 
 .character-360 img {
     position: absolute;
-    height: 480px; /* Increased from 380px */
+    height: 570px; /* Giant character */
     width: auto;
     opacity: 0;
     pointer-events: none;
@@ -1410,8 +1419,8 @@ body.tv-mode {
 
 .hologram-pedestal {
     position: relative;
-    width: 340px; /* Increased from 260px */
-    height: 40px; /* Increased from 35px */
+    width: 400px; /* Wider pedestal */
+    height: 45px; /* Taller pedestal */
     border: 2px solid var(--neon-yellow);
     background: rgba(15, 15, 25, 0.95);
     border-radius: 50% / 15px; /* Creates ellipse */
