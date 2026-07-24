@@ -34,25 +34,26 @@ function renderPodium() {
 
         if (tvContainer) {
             tvContainer.innerHTML = '';
-            if (p.ranking === 1) {
-                // Lina 360 Hologram
-                tvContainer.innerHTML = `
-                    <div class="hologram-container">
-                        <div class="hologram-glow"></div>
-                        <div class="character-360">
-                            <img src="lina_360_1.png" class="frame-1" />
-                            <img src="lina_360_2.png" class="frame-2" />
-                            <img src="lina_360_4.png" class="frame-3" />
-                            <img src="lina_360_3.png" class="frame-4" />
-                        </div>
-                        <div class="hologram-pedestal border-yellow">
-                            <div class="pedestal-label text-yellow">LINA MARULANDA</div>
-                        </div>
+            
+            const colorClass = p.ranking === 1 ? 'border-yellow' : (p.ranking === 2 ? 'border-blue' : 'border-red');
+            const textClass = p.ranking === 1 ? 'text-yellow' : (p.ranking === 2 ? 'text-blue' : 'text-red');
+            const prefix = p.name.toLowerCase(); // 'lina', 'jennifer', 'jhoan'
+            const fullName = p.name + (p.ranking === 1 ? ' MARULANDA' : (p.ranking === 2 ? ' RINCON' : ''));
+            
+            tvContainer.innerHTML = `
+                <div class="hologram-container">
+                    <div class="hologram-glow glow-${prefix}"></div>
+                    <div class="character-360 character-${prefix}">
+                        <img src="${prefix}_360_1.png" class="frame-1" />
+                        <img src="${prefix}_360_2.png" class="frame-2" />
+                        <img src="${prefix}_360_4.png" class="frame-3" />
+                        <img src="${prefix}_360_3.png" class="frame-4" />
                     </div>
-                `;
-            } else {
-                tvContainer.appendChild(createPodiumCard(p.ranking, p));
-            }
+                    <div class="hologram-pedestal ${colorClass}">
+                        <div class="pedestal-label ${textClass}">${fullName}</div>
+                    </div>
+                </div>
+            `;
         }
     });
 }
