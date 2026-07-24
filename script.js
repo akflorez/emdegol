@@ -34,7 +34,25 @@ function renderPodium() {
 
         if (tvContainer) {
             tvContainer.innerHTML = '';
-            tvContainer.appendChild(createPodiumCard(p.ranking, p));
+            if (p.ranking === 1) {
+                // Lina 360 Hologram
+                tvContainer.innerHTML = `
+                    <div class="hologram-container">
+                        <div class="hologram-glow"></div>
+                        <div class="character-360">
+                            <img src="lina_360_1.png" class="frame-1" />
+                            <img src="lina_360_2.png" class="frame-2" />
+                            <img src="lina_360_4.png" class="frame-3" />
+                            <img src="lina_360_3.png" class="frame-4" />
+                        </div>
+                        <div class="hologram-pedestal border-yellow">
+                            <div class="pedestal-label text-yellow">LINA MARULANDA</div>
+                        </div>
+                    </div>
+                `;
+            } else {
+                tvContainer.appendChild(createPodiumCard(p.ranking, p));
+            }
         }
     });
 }

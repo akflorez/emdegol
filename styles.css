@@ -1312,3 +1312,89 @@ body.tv-mode {
     margin: 0;
     text-shadow: 0 0 15px rgba(255,255,255,0.3);
 }
+
+/* 360 Hologram Animation Styles */
+.hologram-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 320px;
+    height: 480px;
+}
+
+.hologram-glow {
+    position: absolute;
+    bottom: 30px;
+    width: 220px;
+    height: 420px;
+    background: linear-gradient(to top, rgba(253, 224, 71, 0.35), rgba(253, 224, 71, 0.02));
+    clip-path: polygon(15% 0%, 85% 0%, 100% 100%, 0% 100%);
+    filter: blur(12px);
+    z-index: 1;
+    animation: pulseGlow 1.5s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+
+@keyframes pulseGlow {
+    0% { opacity: 0.5; }
+    100% { opacity: 0.8; }
+}
+
+.character-360 {
+    position: relative;
+    width: 100%;
+    height: 380px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    z-index: 2;
+    margin-bottom: 10px;
+}
+
+.character-360 img {
+    position: absolute;
+    height: 380px;
+    width: auto;
+    opacity: 0;
+    filter: drop-shadow(0 0 15px rgba(253, 224, 71, 0.45));
+    pointer-events: none;
+    transform-origin: bottom center;
+}
+
+/* 360 Sprite Rotation Keyframes
+   Total duration: 3.2s (0.8s per frame)
+*/
+.character-360 img:nth-child(1) { animation: rotate360Frame 3.2s step-end infinite; animation-delay: 0s; }
+.character-360 img:nth-child(2) { animation: rotate360Frame 3.2s step-end infinite; animation-delay: 0.8s; }
+.character-360 img:nth-child(3) { animation: rotate360Frame 3.2s step-end infinite; animation-delay: 1.6s; }
+.character-360 img:nth-child(4) { animation: rotate360Frame 3.2s step-end infinite; animation-delay: 2.4s; }
+
+@keyframes rotate360Frame {
+    0%, 24.99% { opacity: 1; }
+    25%, 100% { opacity: 0; }
+}
+
+.hologram-pedestal {
+    position: relative;
+    width: 260px;
+    height: 35px;
+    border: 2px solid var(--neon-yellow);
+    background: rgba(15, 15, 25, 0.95);
+    border-radius: 50% / 15px; /* Creates ellipse */
+    box-shadow: 0 0 25px var(--neon-yellow), inset 0 0 15px var(--neon-yellow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+}
+
+.pedestal-label {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px currentColor;
+    color: var(--neon-yellow);
+}
